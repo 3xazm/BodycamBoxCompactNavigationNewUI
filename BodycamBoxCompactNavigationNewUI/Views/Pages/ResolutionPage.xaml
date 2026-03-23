@@ -1,0 +1,82 @@
+<Page
+    x:Class="BodycamBoxCompactNavigationNewUI.Views.Pages.ResolutionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}">
+
+    <Grid Margin="20">
+
+        <StackPanel>
+
+            <!-- 分辨率修复 -->
+            <Border CornerRadius="10"
+                    Padding="20"
+                    Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                    Margin="0,0,0,20">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="150"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- 左边 -->
+                    <StackPanel>
+                        <TextBlock Text="分辨率修复"
+                                   FontSize="20"
+                                   FontWeight="Bold"/>
+
+                        <TextBlock Text="{Binding ViewModel.CurrentResolution}"
+                                   Margin="0,10,0,0"/>
+
+                        <TextBlock Text="修复笔记本或多显示器环境下导致Bodycam的分辨率异常问题"
+                                   Margin="0,10,0,0"
+                                   TextWrapping="Wrap"/>
+                    </StackPanel>
+
+                    <!-- 右边按钮 -->
+                    <Button Grid.Column="1"
+                            Content="修复"
+                            Width="100"
+                            Height="40"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Command="{Binding ViewModel.FixResolutionCommand}"/>
+                </Grid>
+            </Border>
+
+            <!-- 黑屏修复 -->
+            <Border CornerRadius="10"
+                    Padding="20"
+                    Background="{DynamicResource CardBackgroundFillColorDefaultBrush}">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="150"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel>
+                        <TextBlock Text="黑屏修复"
+                                   FontSize="20"
+                                   FontWeight="Bold"/>
+
+                        <TextBlock Text="本修复方案针对特定兼容性黑屏有效。注：仅支持正版授权版本，非官方分发版本无法保证修复效果。"
+                                   Margin="0,10,0,0"
+                                   TextWrapping="Wrap"/>
+                    </StackPanel>
+
+                    <Button Grid.Column="1"
+                            Content="修复"
+                            Width="100"
+                            Height="40"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Command="{Binding ViewModel.FixBlackScreenCommand}"/>
+                </Grid>
+            </Border>
+
+        </StackPanel>
+    </Grid>
+</Page>

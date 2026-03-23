@@ -1,0 +1,54 @@
+﻿<Page
+  x:Class="BodycamBoxCompactNavigationNewUI.Views.Pages.SettingsPage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:helpers="clr-namespace:BodycamBoxCompactNavigationNewUI.Helpers"
+  xmlns:local="clr-namespace:BodycamBoxCompactNavigationNewUI.Views.Pages"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+  Title="SettingsPage"
+  d:DataContext="{d:DesignInstance local:SettingsPage,
+                                     IsDesignTimeCreatable=False}"
+  d:DesignHeight="450"
+  d:DesignWidth="800"
+  ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+  ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+  Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+  mc:Ignorable="d"
+>
+  <Page.Resources>
+    <helpers:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+  </Page.Resources>
+  <StackPanel>
+        <TextBlock FontSize="20" FontWeight="Medium" Text="个性化" Margin="3,50,0,0" />
+        <TextBlock Margin="5,30,0,0" Text="主题" />
+    <RadioButton
+      Margin="3,12,0,0"
+      Command="{Binding ViewModel.ChangeThemeCommand, Mode=OneWay}"
+      CommandParameter="theme_light"
+      Content="浅色模式"
+      GroupName="themeSelect"
+      IsChecked="{Binding ViewModel.CurrentTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}"
+    />
+    <RadioButton
+      Margin="3,8,0,0"
+      Command="{Binding ViewModel.ChangeThemeCommand, Mode=OneWay}"
+      CommandParameter="theme_dark"
+      Content="深色模式"
+      GroupName="themeSelect"
+      IsChecked="{Binding ViewModel.CurrentTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}"
+    />
+    <RadioButton
+        Margin="3,8,0,0"
+        Command="{Binding ViewModel.ChangeThemeCommand}"
+        CommandParameter="theme_acrylic"
+        Content="Acrylic玻璃渲染（对 GPU 性能有一定要求）"
+        GroupName="themeSelect"
+     />
+        <TextBlock Margin="0,230,0,0" FontSize="20" FontWeight="Medium" Text="About Bodycam Box Compact Navigation New_UI" />
+        <TextBlock Margin="0,3,0,0" FontSize="20" FontWeight="Medium" Text="关于 Bodycam工具紧凑型导航新界面" />
+        <TextBlock Margin="0,3,0,0" FontSize="15" FontWeight="Medium" Text="Bodycam Box 2026" />
+        <TextBlock Margin="0,12,0,0" Text="{Binding ViewModel.AppVersion, Mode=OneWay}" />
+  </StackPanel>
+</Page>
