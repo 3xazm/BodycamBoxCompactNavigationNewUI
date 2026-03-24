@@ -118,7 +118,6 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Pages
             Directory.CreateDirectory(toolFolder);
             Directory.CreateDirectory(dataFolder);
 
-
             // 复制并改名
             File.Copy(Path.Combine(source, "EnhancedInputUserSettings.sav"),
                       Path.Combine(dataFolder, "ServerSettingsSuser"), true);

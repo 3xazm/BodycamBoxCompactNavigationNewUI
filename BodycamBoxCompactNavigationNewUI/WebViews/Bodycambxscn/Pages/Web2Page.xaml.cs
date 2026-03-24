@@ -16,7 +16,7 @@ namespace BodycamBoxCompactNavigationNewUI.WebViews.Bodycambxscn.Pages
             await WebView2.EnsureCoreWebView2Async(null);
 
             // 只打开首页，后面全部交给网页
-            WebView2.Source = new Uri("https://bodycam.bxs.cn");
+            WebView2.Source = new Uri("https://bodycam.bxs.cn/bodycam_web_app.html");
         }
     }
 }

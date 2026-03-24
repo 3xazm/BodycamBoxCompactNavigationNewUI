@@ -8,7 +8,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
     public partial class MainWindowViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _applicationTitle = "Bodycam 爱吃虾皮工具箱 V2.1";
+        private string _applicationTitle = "Bodycam 爱吃虾皮工具箱 V2.2";
 
         [ObservableProperty]
         private ObservableCollection<object> _menuItems = new()
@@ -79,7 +79,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
                     },
                     new NavigationViewItem()
                     {
-                        Content = "僵尸村庄全流程速通指南",
+                        Content = "多人僵尸村庄速通指南",
                         Icon = new SymbolIcon { Symbol = SymbolRegular.GlobeVideo48 },
                         TargetPageType = typeof(WebViews.HanserCommunity.Pages.Hanser3Page)
                     },
@@ -100,7 +100,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
                     },
                     new NavigationViewItem()
                     {
-                        Content = "视频 >速通僵尸村。",
+                        Content = "单人全程速通僵尸村。",
                         Icon = new SymbolIcon { Symbol = SymbolRegular.GlobeVideo32 },
                         TargetPageType = typeof(WebViews.AruiCommunity.Pages.Arui2Page) 
                     },
