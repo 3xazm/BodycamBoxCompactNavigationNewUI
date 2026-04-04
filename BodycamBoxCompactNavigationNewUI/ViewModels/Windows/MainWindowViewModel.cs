@@ -8,7 +8,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
     public partial class MainWindowViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _applicationTitle = "Bodycam 爱吃虾皮工具箱 V2.2";
+        private string _applicationTitle = "Bodycam 爱吃虾皮工具箱 V2.3   [win11]";
 
         [ObservableProperty]
         private ObservableCollection<object> _menuItems = new()

@@ -28,7 +28,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Pages
             LoadResolution();
         }
 
-        // 功能扩展 1 的构造函数 
+        // 功能扩展 1 的构造函数  黑屏的位置
         string FindBodycamExe()
         {
             foreach (DriveInfo drive in DriveInfo.GetDrives())
@@ -37,12 +37,10 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Pages
 
                 try
                 {
-                    string path = Path.Combine(
-                        drive.RootDirectory.FullName,
-                        @"Steam\steamapps\common\Bodycam\Bodycam.exe");
+                    string result = SearchFile(drive.RootDirectory.FullName, "Bodycam.exe");
 
-                    if (File.Exists(path))
-                        return path;
+                    if (result != null)
+                        return result;
                 }
                 catch { }
             }
@@ -50,6 +48,32 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Pages
             return null;
         }
 
+        private string SearchFile(string root, string fileName)
+        {
+            try
+            {
+                // 先找当前目录
+                var files = Directory.GetFiles(root, fileName);
+                if (files.Length > 0)
+                    return files[0];
+
+                // 再递归子目录
+                var dirs = Directory.GetDirectories(root);
+                foreach (var dir in dirs)
+                {
+                    try
+                    {
+                        string result = SearchFile(dir, fileName);
+                        if (result != null)
+                            return result;
+                    }
+                    catch { }
+                }
+            }
+            catch { }
+
+            return null;
+        }
 
         /// <summary>
         /// 设计思路：直接获取系统的
@@ -176,7 +200,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Pages
                     if (key == null)
                     {
                         System.Windows.MessageBox.Show("无法打开注册表！");
-                        return;
+                        return;                                    
                     }
 
                     // 设置为：禁用全屏优化（不设置 WIN7/WIN8）

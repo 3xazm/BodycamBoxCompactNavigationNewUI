@@ -87,7 +87,13 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Pages
         private void InstallLocalization(string sourceFolder)
         {
             try
-            {
+            {                 
+                if (!Directory.Exists(sourceFolder))
+                {
+                    MessageBox.Show("Error 汉化包文件丢失！");
+                    return;
+                }  
+
                 if (IsGameRunning())
                 {
                     MessageBox.Show(
@@ -237,7 +243,12 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Pages
         // ===============================
         private void Add2026_Click(object sender, RoutedEventArgs e)
         {
-            string source = @"C:\Users\carlo\source\repos\BodycamBoxCompactNavigationNewUI\BodycamBoxCompactNavigationNewUI\ChineseLocalizationPack\2026";
+            string source = Path.Combine(
+                AppContext.BaseDirectory,
+                    "ChineseLocalizationPack",
+                        "2026"
+            );
+
             InstallLocalization(source);
         }
 
@@ -246,7 +257,12 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Pages
         // ===============================
         private void Add2025_Click(object sender, RoutedEventArgs e)
         {
-            string source = @"C:\Users\carlo\source\repos\BodycamBoxCompactNavigationNewUI\BodycamBoxCompactNavigationNewUI\ChineseLocalizationPack\2025";
+            string source = Path.Combine(
+                AppContext.BaseDirectory,
+                    "ChineseLocalizationPack",
+                        "2025"
+            );
+
             InstallLocalization(source);
         }
 
