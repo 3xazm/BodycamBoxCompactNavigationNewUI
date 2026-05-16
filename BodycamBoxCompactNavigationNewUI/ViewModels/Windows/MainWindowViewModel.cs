@@ -8,7 +8,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
     public partial class MainWindowViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _applicationTitle = "Bodycam 爱吃虾皮工具箱 V2.3   [win11]";
+        private string _applicationTitle = "Bodycam工具箱 V2.4   [win11]";
 
         [ObservableProperty]
         private ObservableCollection<object> _menuItems = new()
@@ -116,7 +116,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
                 Content = "设置",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Settings24 },
                 TargetPageType = typeof(Views.Pages.SettingsPage)
-            }
+            },
         };
         
         [ObservableProperty]

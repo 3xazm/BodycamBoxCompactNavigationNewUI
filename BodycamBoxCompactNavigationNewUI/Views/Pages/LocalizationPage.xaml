@@ -15,6 +15,40 @@
                        FontWeight="SemiBold"
                        Margin="0,0,0,15"/>
 
+            <!-- ================= 2026 arui And metaOBS ================= -->
+            <Border CornerRadius="15"
+                    Padding="20"
+                    Margin="0,0,0,15"
+                    Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="1">
+
+                <StackPanel>
+
+                    <TextBlock Text="Bodycam 汉化补丁"
+                   FontSize="18"
+                   FontWeight="SemiBold"/>
+
+                    <TextBlock Text="说明： 2026年 5月 阿锐和 MetaOBS 汉化补丁"
+                   Opacity="0.7"
+                   Margin="0,15,0,15"/>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <ui:Button Content="添加"
+                       Width="100"
+                       Margin="0,0,10,0"
+                       Click="Add2026AruiAndmetaOBS_Click"/>
+
+                        <ui:Button Content="删除"
+                       Width="100"
+                       Click="RemoveLocalization_Click"/>
+
+                    </StackPanel>
+
+                </StackPanel>
+            </Border>
+
             <!-- ================= 2026 ================= -->
             <Border CornerRadius="15"
                     Padding="20"
@@ -29,7 +63,7 @@
                                FontSize="18"
                                FontWeight="SemiBold"/>
 
-                    <TextBlock Text="说明： 20260309"
+                    <TextBlock Text="说明： 2026 03 09"
                                Opacity="0.7"
                                Margin="0,15,0,15"/>
 

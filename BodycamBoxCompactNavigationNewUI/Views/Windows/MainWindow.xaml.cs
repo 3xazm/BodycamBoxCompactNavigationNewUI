@@ -25,10 +25,10 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Windows
             SystemThemeWatcher.Watch(this);
 
             InitializeComponent();
-
-            // 在这里添加设置图标的代码
+            
+            // 在这里添加设置图标的代码         
             try
-            {
+            {          
                 // 1. 定义图标路径 (注意路径要和你的项目结构对应)
                 // 假设你的图标放在项目根目录的 Assets 文件夹下
                 Uri iconUri = new Uri("pack://application:,,,/Assets/qvertionmiku.ico", UriKind.RelativeOrAbsolute);
@@ -44,13 +44,13 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Windows
                         Source = new BitmapImage(iconUri)
                     };
                 }
-            }
+            }                    
             catch (Exception ex)
             {
                 // 如果路径错了，这里会抓住异常，保证程序起码能跑起来
                 System.Diagnostics.Debug.WriteLine($"图标加载失败: {ex.Message}");
             }
-
+               
             SetPageService(navigationViewPageProvider);
 
             navigationService.SetNavigationControl(RootNavigation);

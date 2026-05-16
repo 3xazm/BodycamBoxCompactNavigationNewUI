@@ -1,17 +1,53 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net10.0-windows</TargetFramework>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <ApplicationIcon>wpfui-icon.ico</ApplicationIcon>
-    <UseWPF>true</UseWPF>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net10.0-windows</TargetFramework>
+
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<ApplicationIcon>wpfui-icon.ico</ApplicationIcon>
+
+		<UseWPF>true</UseWPF>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- 单文件发布 -->
+		<PublishSingleFile>true</PublishSingleFile>
+
+		<!-- 自带 .NET 运行库 -->
+		<SelfContained>true</SelfContained>
+
+		<!-- Windows 64位 -->
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+
+		<!-- WPF 不建议裁剪 -->
+		<PublishTrimmed>false</PublishTrimmed>
+	
+	    <!-- Native DLL 自动释放到 AppData -->
+	    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+	</PropertyGroup>
 
   <ItemGroup>
     <Resource Include="Assets\qvertionmiku.ico" />
+    <EmbeddedResource Include="playAssets\2025\BodycamLocalization_P.pak">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="playAssets\2025\BodycamLocalization_P.utoc">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="playAssets\2026\AruiAndmetaOBS\BodycamLocalization_P.ucas">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="playAssets\2026\AruiAndmetaOBS\BodycamLocalization_P.utoc">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="playAssets\2026\BodycamLocalization_P.pak">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="playAssets\2026\BodycamLocalization_P.utoc">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="app.ico" />
     <Content Include="wpfui-icon.ico" />
   </ItemGroup>
 
@@ -30,6 +66,16 @@
     <None Remove="Assets\qvertionmiku.ico" />
     <None Remove="Assets\wpfui-icon-256.png" />
     <None Remove="Assets\wpfui-icon-1024.png" />
+    <None Remove="playAssets\2025\BodycamLocalization_P.pak" />
+    <None Remove="playAssets\2025\BodycamLocalization_P.ucas" />
+    <None Remove="playAssets\2025\BodycamLocalization_P.utoc" />
+    <None Remove="playAssets\2026\AruiAndmetaOBS\BodycamLocalization_P.pak" />
+    <None Remove="playAssets\2026\AruiAndmetaOBS\BodycamLocalization_P.ucas" />
+    <None Remove="playAssets\2026\AruiAndmetaOBS\BodycamLocalization_P.utoc" />
+    <None Remove="playAssets\2026\BodycamLocalization_P.pak" />
+    <None Remove="playAssets\2026\BodycamLocalization_P.ucas" />
+    <None Remove="playAssets\2026\BodycamLocalization_P.utoc" />
+    <None Remove="wpfui-icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +84,21 @@
     <Resource Include="Assets\bodycamsteam.jpg" />
     <Resource Include="Assets\wpfui-icon-256.png" />
     <Resource Include="Assets\wpfui-icon-1024.png" />
+    <EmbeddedResource Include="playAssets\2025\BodycamLocalization_P.ucas">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="playAssets\2026\AruiAndmetaOBS\BodycamLocalization_P.pak">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="playAssets\2026\BodycamLocalization_P.ucas">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

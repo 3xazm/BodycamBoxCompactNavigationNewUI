@@ -45,10 +45,10 @@
         CommandParameter="theme_acrylic"
         Content="Acrylic玻璃渲染（对 GPU 性能有一定要求）"
         GroupName="themeSelect"
-     />
+     /> <!--
         <TextBlock Margin="0,230,0,0" FontSize="20" FontWeight="Medium" Text="About Bodycam Box Compact Navigation New_UI" />
         <TextBlock Margin="0,3,0,0" FontSize="20" FontWeight="Medium" Text="关于 Bodycam工具紧凑型导航新界面" />
-        <TextBlock Margin="0,3,0,0" FontSize="15" FontWeight="Medium" Text="Bodycam Box 2026" />
-        <TextBlock Margin="0,12,0,0" Text="{Binding ViewModel.AppVersion, Mode=OneWay}" />
+        <TextBlock Margin="0,3,0,0" FontSize="15" FontWeight="Medium" Text="Bodycam Box 2026" /> 
+        <TextBlock Margin="0,12,0,0" Text="{Binding ViewModel.AppVersion, Mode=OneWay}" />-->
   </StackPanel>
 </Page>

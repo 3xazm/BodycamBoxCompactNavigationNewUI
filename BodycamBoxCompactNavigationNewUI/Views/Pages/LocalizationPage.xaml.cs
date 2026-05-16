@@ -5,6 +5,8 @@ using System.Windows;
 using System.Windows.Controls;
 using Wpf.Ui;
 using Microsoft.Win32;
+using System.Text.RegularExpressions;
+using System.Reflection;
 
 namespace BodycamBoxCompactNavigationNewUI.Views.Pages
 {
@@ -13,6 +15,31 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Pages
         public LocalizationPage()
         {
             InitializeComponent();
+        }
+
+        // ===============================
+        // 检测 并提取内置资源到指定路径
+        // ===============================
+        private void ExtractEmbeddedResource(string resourceName, string outputPath)
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+
+            using Stream stream = assembly.GetManifestResourceStream(resourceName);
+
+            if (stream == null)
+            {
+                MessageBox.Show(
+                    "未找到内置资源：\n" + resourceName,
+                    "错误",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error
+                );
+                return;
+            }
+
+            using FileStream fileStream = new FileStream(outputPath, FileMode.Create, FileAccess.Write);
+
+            stream.CopyTo(fileStream);
         }
 
         // ===============================
@@ -87,12 +114,12 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Pages
         private void InstallLocalization(string sourceFolder)
         {
             try
-            {                 
+            {
                 if (!Directory.Exists(sourceFolder))
                 {
                     MessageBox.Show("Error 汉化包文件丢失！");
                     return;
-                }  
+                }
 
                 if (IsGameRunning())
                 {
@@ -238,18 +265,58 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Pages
             }
         }
 
+        private void ExtractAndInstall(string resourceSubPath)
+        {
+            try
+            {
+                // 1. 定位到 AppData/Local/Bodycam Box Temps
+                string localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                string tempDir = Path.Combine(localAppData, "Bodycam Box Temps", resourceSubPath.TrimStart('_'));
+
+                // 如果文件夹不存在则创建
+                if (!Directory.Exists(tempDir))
+                {
+                    Directory.CreateDirectory(tempDir);
+                }
+
+                // 2. 资源名称前缀 (根据你的项目命名空间)
+                string prefix = "BodycamBoxCompactNavigationNewUI.playAssets." + resourceSubPath;
+                string[] files = { "BodycamLocalization_P.pak", "BodycamLocalization_P.ucas", "BodycamLocalization_P.utoc" };
+
+                // 3. 提取文件到 AppData
+                foreach (var file in files)
+                {
+                    string outPath = Path.Combine(tempDir, file);
+                    // 这里调用你之前的 ExtractEmbeddedResource 方法
+                    ExtractEmbeddedResource($"{prefix}.{file}", outPath);
+                }
+
+                // 4. 执行安装逻辑：从 AppData 拷贝到 Steam 游戏目录
+                InstallLocalization(tempDir);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"解压过程出错：{ex.Message}", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+
+        // ===============================
+        // 2026 Arui and metaOBS 汉化按钮
+        // ===============================
+        private void Add2026AruiAndmetaOBS_Click(object sender, RoutedEventArgs e)
+        {
+            // 注意：这里的路径要和你嵌入资源的层级完全一致
+            // 如果是 playAssets/_2026/AruiAndmetaOBS
+            ExtractAndInstall("_2026.AruiAndmetaOBS");
+        }
+
         // ===============================
         // 2026 汉化按钮
         // ===============================
         private void Add2026_Click(object sender, RoutedEventArgs e)
         {
-            string source = Path.Combine(
-                AppContext.BaseDirectory,
-                    "ChineseLocalizationPack",
-                        "2026"
-            );
-
-            InstallLocalization(source);
+            ExtractAndInstall("_2026");
         }
 
         // ===============================
@@ -257,13 +324,7 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Pages
         // ===============================
         private void Add2025_Click(object sender, RoutedEventArgs e)
         {
-            string source = Path.Combine(
-                AppContext.BaseDirectory,
-                    "ChineseLocalizationPack",
-                        "2025"
-            );
-
-            InstallLocalization(source);
+            ExtractAndInstall("_2025");
         }
 
         // ===============================
