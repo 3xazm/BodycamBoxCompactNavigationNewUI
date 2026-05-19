@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.IO;
 using System.Runtime.InteropServices;
+using CommunityToolkit.Mvvm.Input;
 
 namespace BodycamBoxCompactNavigationNewUI.ViewModels.Pages
 {
@@ -109,8 +110,8 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Pages
 
                 if (processes.Length > 0)
                 {
-                    System.Windows.MessageBox.Show("检测到Bodycam正在运行，请先关闭！", "Bodycam 工具箱", 
-                        MessageBoxButton.OK, 
+                    System.Windows.MessageBox.Show("检测到Bodycam正在运行，请先关闭！", "Bodycam 工具箱",
+                        MessageBoxButton.OK,
                         MessageBoxImage.Warning);
 
                     return;
@@ -188,7 +189,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Pages
                     System.Windows.MessageBox.Show("未找到 Bodycam.exe",
                     "Black Screen Fix",
                     MessageBoxButton.OK,
-                    MessageBoxImage.Error) ; 
+                    MessageBoxImage.Error);
                     return;
                 }
 
@@ -200,7 +201,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Pages
                     if (key == null)
                     {
                         System.Windows.MessageBox.Show("无法打开注册表！");
-                        return;                                    
+                        return;
                     }
 
                     // 设置为：禁用全屏优化（不设置 WIN7/WIN8）
@@ -215,6 +216,41 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Pages
             {
                 Thread.Sleep(1000); // 延迟 500 毫秒 = 0.5 秒
                 System.Windows.MessageBox.Show("发生错误：" + ex.Message, "Bodycam 工具箱", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        //五颜六色彩虹修复
+        [RelayCommand]
+        private void FixRainbowScreen()
+        {
+            try
+            {
+                // Windows HDR 注册表路径
+                string keyPath = @"Software\Microsoft\Windows\CurrentVersion\VideoSettings";
+
+                using (RegistryKey key = Registry.CurrentUser.OpenSubKey(keyPath, true))
+                {
+                    if (key != null)
+                    {
+                        // 关闭 HDR
+                        key.SetValue("EnableHDRForPlayback", 0, RegistryValueKind.DWord);
+                    }
+                }
+
+                // 刷新显示设置
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "displayswitch.exe",
+                    Arguments = "/extend",
+                    CreateNoWindow = true,
+                    UseShellExecute = false
+                });
+
+                MessageBox.Show("彩色/闪屏异常已修复，请重新启动游戏。", "Bodycam 工具箱");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"彩色/闪屏异常 修复失败：{ex.Message}");
             }
         }
     }

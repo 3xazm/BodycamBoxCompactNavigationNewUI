@@ -10,8 +10,8 @@
         <StackPanel>
 
             <!-- 分辨率修复 -->
-            <Border CornerRadius="10"
-                    Padding="20"
+            <Border CornerRadius="25"
+                    Padding="25"
                     Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
                     Margin="0,0,0,20">
 
@@ -39,7 +39,7 @@
                     <Button Grid.Column="1"
                             Content="修复"
                             Width="100"
-                            Height="40"
+                            Height="35"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Command="{Binding ViewModel.FixResolutionCommand}"/>
@@ -47,9 +47,10 @@
             </Border>
 
             <!-- 黑屏修复 -->
-            <Border CornerRadius="10"
-                    Padding="20"
-                    Background="{DynamicResource CardBackgroundFillColorDefaultBrush}">
+            <Border CornerRadius="25"
+                    Padding="25"
+                    Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+					Margin="0,0,0,20">
 
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -70,13 +71,47 @@
                     <Button Grid.Column="1"
                             Content="修复"
                             Width="100"
-                            Height="40"
+                            Height="35"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Command="{Binding ViewModel.FixBlackScreenCommand}"/>
                 </Grid>
             </Border>
 
+			<!-- 五颜六色彩虹修复 -->
+			<Border CornerRadius="25"
+                    Padding="25"
+                    Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+					Margin="0,0,0,20">
+				
+
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition />
+						<ColumnDefinition Width="150"/>
+					</Grid.ColumnDefinitions>
+
+					<StackPanel>
+						<TextBlock Text="五颜六色彩虹修复"
+                                   FontSize="20"
+                                   FontWeight="Bold"/>
+
+						<TextBlock Text="五颜六色彩虹修复是指游戏中出现的彩虹色异常问题和按Tab玩家数据模板出现闪屏修复发方案。"
+                                   Margin="0,10,0,0"
+                                   TextWrapping="Wrap"/>
+					</StackPanel>
+
+					<Button Grid.Column="1"
+                            Content="修复"
+                            Width="100"
+                            Height="35"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Command="{Binding ViewModel.FixRainbowScreenCommand}"/>
+				</Grid>
+			</Border>
+			
+			
         </StackPanel>
     </Grid>
 </Page>
