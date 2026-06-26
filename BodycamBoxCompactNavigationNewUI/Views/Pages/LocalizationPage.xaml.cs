@@ -304,6 +304,16 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Pages
         // ===============================
         // 2026 Arui and metaOBS 汉化按钮
         // ===============================
+        private void Add2026patch_Click(object sender, RoutedEventArgs e)
+        {
+            // 注意：这里的路径要和你嵌入资源的层级完全一致
+            // 如果是 playAssets/_2026/AruiAndmetaOBS
+            ExtractAndInstall("_2026.patch");
+        }
+
+        // ===============================
+        // 2026 Arui and metaOBS 汉化按钮
+        // ===============================
         private void Add2026AruiAndmetaOBS_Click(object sender, RoutedEventArgs e)
         {
             // 注意：这里的路径要和你嵌入资源的层级完全一致

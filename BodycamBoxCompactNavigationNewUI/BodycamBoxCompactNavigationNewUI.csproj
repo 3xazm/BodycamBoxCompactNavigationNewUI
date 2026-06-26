@@ -75,6 +75,9 @@
     <None Remove="playAssets\2026\BodycamLocalization_P.pak" />
     <None Remove="playAssets\2026\BodycamLocalization_P.ucas" />
     <None Remove="playAssets\2026\BodycamLocalization_P.utoc" />
+    <None Remove="playAssets\2026\patch\BodycamLocalization_P.pak" />
+    <None Remove="playAssets\2026\patch\BodycamLocalization_P.ucas" />
+    <None Remove="playAssets\2026\patch\BodycamLocalization_P.utoc" />
     <None Remove="wpfui-icon.ico" />
   </ItemGroup>
 
@@ -99,6 +102,9 @@
     <EmbeddedResource Include="playAssets\2026\BodycamLocalization_P.ucas">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="playAssets\2026\patch\BodycamLocalization_P.pak" />
+    <EmbeddedResource Include="playAssets\2026\patch\BodycamLocalization_P.ucas" />
+    <EmbeddedResource Include="playAssets\2026\patch\BodycamLocalization_P.utoc" />
   </ItemGroup>
 
 </Project>

@@ -16,7 +16,7 @@
   
     ExtendsContentIntoTitleBar="True"
   
-  WindowBackdropType="Mica"
+  WindowBackdropType="Acrylic"
   WindowCornerPreference="Round"
   WindowStartupLocation="CenterScreen"
   mc:Ignorable="d"
