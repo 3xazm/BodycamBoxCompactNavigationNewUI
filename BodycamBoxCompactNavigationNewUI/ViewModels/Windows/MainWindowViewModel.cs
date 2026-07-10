@@ -8,7 +8,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
     public partial class MainWindowViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _applicationTitle = "Bodycam工具箱 V2.4.3   [win10/11]";
+        private string _applicationTitle = "Bodycam工具箱 V2.5.0   q群1: 865048887    q群2: 470710001 ";
 
         [ObservableProperty]
         private ObservableCollection<object> _menuItems = new()
@@ -22,7 +22,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
             },  
             new NavigationViewItem()
             {
-                Content = "分辨率",
+                Content = "分辨率与其他",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Desktop24 },
                 TargetPageType = typeof(Views.Pages.ResolutionPage)
             },       
@@ -40,29 +40,67 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
             },
             new NavigationViewItem()
             {
-                Content = "Bodycam游戏比赛数据",
-                Icon = new SymbolIcon { Symbol = SymbolRegular.Globe24 },
-                TargetPageType = typeof(WebViews.Bodycambxscn.Pages.Web1Page),
+                Content = "Bodycam优化+",                                                                
+                Icon = new SymbolIcon { Symbol = SymbolRegular.TopSpeed24 },
+                TargetPageType = typeof(Views.Pages.BodycamOptimizationPage),
                 MenuItems =
                 {
-                new NavigationViewItem()
-                {
-                  Content = "主页",
-                  Icon = new SymbolIcon { Symbol = SymbolRegular.HomeMore24 },
-                  TargetPageType = typeof(WebViews.Bodycambxscn.Pages.Web1Page) },
-
-                new NavigationViewItem()
-                {
-                    Content = "游戏比赛数据分析工具",
-                    Icon = new SymbolIcon { Symbol = SymbolRegular.TableSearch20 },
-                    TargetPageType = typeof(WebViews.Bodycambxscn.Pages.Web2Page) },
+                    new NavigationViewItem()
+                    {
+                        Content = "优化添加",
+                        Icon = new SymbolIcon { Symbol = SymbolRegular.AddSquareMultiple16 },
+                        TargetPageType = typeof(Views.Pages.BodycamOptimizationPage)
+                    },
+                    new NavigationViewItem()
+                    {
+                        Content = "额外模式",
+                        Icon = new SymbolIcon { Symbol = SymbolRegular.AppsAddIn20 },
+                        TargetPageType = typeof(Views.Pages.BodycamOptimizationPage2)
+                    },
+                    new NavigationViewItem()
+                    {
+                        Content = "如何使用？",
+                        Icon = new SymbolIcon { Symbol = SymbolRegular.BookQuestionMark24 },
+                        TargetPageType = typeof(Views.Pages.BodycamOptimizationPage3)
+                    },    
+                    new NavigationViewItem()
+                    {
+                        Content = "游戏问题/建议",
+                        Icon = new SymbolIcon { Symbol = SymbolRegular.Attach12 },
+                        TargetPageType = typeof(Views.Pages.BodycamOptimizationPage4)
+                    }
                 }
             },
+
+            //分割线 1
+            new NavigationViewItemSeparator(),
             new NavigationViewItem()
             {
-                Content = "Hanser -主包",
+                Content = "1.倾晨哟",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Globe24 },
-                TargetPageType = typeof(WebViews.HanserCommunity.Pages.Hanser1Page),
+                //TargetPageType = typeof(WebViews.QingchenCommunity.Pages.Qingchen1Page),
+                MenuItems =
+                {
+                    new NavigationViewItem()
+                    {
+                        Content = "哔哩哔哩主页",
+                        Icon = new SymbolIcon { Symbol = SymbolRegular.PersonHeart20 },
+                        TargetPageType = typeof(WebViews.QingchenCommunity.Pages.Qingchen1Page),
+                    },
+                    new NavigationViewItem()
+                    {
+                        //抖音
+                        Content = "抖音主页",
+                        Icon = new SymbolIcon { Symbol = SymbolRegular.PersonHeart20 },
+                        TargetPageType = typeof(WebViews.QingchenCommunity.Pages.Qingchen3Page),
+                    },
+                }
+            },         
+            new NavigationViewItem()
+            {
+                Content = "2.Hanser主包",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.Globe24 },
+                //TargetPageType = typeof(WebViews.HanserCommunity.Pages.Hanser1Page),
                 MenuItems =
                 {
                     new NavigationViewItem()
@@ -87,9 +125,9 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
             },
             new NavigationViewItem()
             {
-                Content = "Arui阿锐 -主播",
+                Content = "3.Arui阿锐 主播",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Globe24 },
-                TargetPageType = typeof(WebViews.AruiCommunity.Pages.Arui1Page),
+                //TargetPageType = typeof(WebViews.AruiCommunity.Pages.Arui1Page),
                 MenuItems =
                 {
                     new NavigationViewItem()
@@ -102,15 +140,47 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
                     {
                         Content = "单人全程速通僵尸村。",
                         Icon = new SymbolIcon { Symbol = SymbolRegular.GlobeVideo32 },
-                        TargetPageType = typeof(WebViews.AruiCommunity.Pages.Arui2Page) 
+                        TargetPageType = typeof(WebViews.AruiCommunity.Pages.Arui2Page)
                     },
                 }
             },
+
+             //分割线 2
+            new NavigationViewItemSeparator(),
+            new NavigationViewItem()
+            {
+                Content = "Bodycam比赛数据",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.DataPie24 },
+                //TargetPageType = typeof(WebViews.Bodycambxscn.Pages.Web1Page),
+                MenuItems =
+                {
+                new NavigationViewItem()
+                {
+                  Content = "主页",
+                  Icon = new SymbolIcon { Symbol = SymbolRegular.HomeMore24 },
+                  TargetPageType = typeof(WebViews.Bodycambxscn.Pages.Web1Page) },
+
+                new NavigationViewItem()
+                {
+                    Content = "游戏比赛数据分析工具",
+                    Icon = new SymbolIcon { Symbol = SymbolRegular.TableSearch20 },
+                    TargetPageType = typeof(WebViews.Bodycambxscn.Pages.Web2Page) },
+                }
+            },
+
         };
+
+
 
         [ObservableProperty]
         private ObservableCollection<object> _footerMenuItems = new()
         {
+            new NavigationViewItem()
+            {
+                Content = "如何使用工具箱?",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.CalendarInfo16 },
+                TargetPageType = typeof(WebViews.QingchenCommunity.Pages.Qingchen2Page)
+            },
             new NavigationViewItem()
             {
                 Content = "设置",

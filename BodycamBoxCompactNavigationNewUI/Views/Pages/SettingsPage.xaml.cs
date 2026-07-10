@@ -13,6 +13,8 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Pages
             DataContext = this;
 
             InitializeComponent();
+
+
         }
     }
 }

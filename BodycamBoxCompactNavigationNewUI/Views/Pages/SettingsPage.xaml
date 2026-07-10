@@ -8,47 +8,109 @@
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
   Title="SettingsPage"
-  d:DataContext="{d:DesignInstance local:SettingsPage,
-                                     IsDesignTimeCreatable=False}"
-  d:DesignHeight="450"
+  d:DataContext="{d:DesignInstance local:SettingsPage, IsDesignTimeCreatable=False}"
+  d:DesignHeight="650"
   d:DesignWidth="800"
   ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
   ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
   Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-  mc:Ignorable="d"
->
-  <Page.Resources>
-    <helpers:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
-  </Page.Resources>
-  <StackPanel>
-        <TextBlock FontSize="20" FontWeight="Medium" Text="个性化" Margin="3,50,0,0" />
-        <TextBlock Margin="5,30,0,0" Text="主题" />
-    <RadioButton
-      Margin="3,12,0,0"
-      Command="{Binding ViewModel.ChangeThemeCommand, Mode=OneWay}"
-      CommandParameter="theme_light"
-      Content="浅色模式"
-      GroupName="themeSelect"
-      IsChecked="{Binding ViewModel.CurrentTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}"
-    />
-    <RadioButton
-      Margin="3,8,0,0"
-      Command="{Binding ViewModel.ChangeThemeCommand, Mode=OneWay}"
-      CommandParameter="theme_dark"
-      Content="深色模式"
-      GroupName="themeSelect"
-      IsChecked="{Binding ViewModel.CurrentTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}"
-    />
-    <RadioButton
-        Margin="3,8,0,0"
-        Command="{Binding ViewModel.ChangeThemeCommand}"
-        CommandParameter="theme_acrylic"
-        Content="Acrylic玻璃渲染（对 GPU 性能有一定要求）"
-        GroupName="themeSelect"
-     /> <!--
-        <TextBlock Margin="0,230,0,0" FontSize="20" FontWeight="Medium" Text="About Bodycam Box Compact Navigation New_UI" />
-        <TextBlock Margin="0,3,0,0" FontSize="20" FontWeight="Medium" Text="关于 Bodycam工具紧凑型导航新界面" />
-        <TextBlock Margin="0,3,0,0" FontSize="15" FontWeight="Medium" Text="Bodycam Box 2026" /> 
-        <TextBlock Margin="0,12,0,0" Text="{Binding ViewModel.AppVersion, Mode=OneWay}" />-->
-  </StackPanel>
+  mc:Ignorable="d">
+
+    <Page.Resources>
+        <helpers:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+    </Page.Resources>
+
+    <Grid Margin="30,25,30,25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,25">
+            <TextBlock Text="⚙️ 工具箱设置" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource TextFillColorPrimaryBrush}"/>
+            <TextBlock Text="定制属于你的极致极客个性化皮肤与渲染模式" FontSize="13" Foreground="{DynamicResource TextFillColorSecondaryBrush}" Margin="2,6,0,0"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+
+                <Border Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="15"
+                    Padding="22"
+                    Margin="0,0,0,25">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                            <TextBlock Text="🎨 主题与视觉渲染风格" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource TextFillColorPrimaryBrush}"/>
+                        </StackPanel>
+
+                        <RadioButton Margin="5,8,0,8"
+                                 Command="{Binding ViewModel.ChangeThemeCommand, Mode=OneWay}"
+                                 CommandParameter="theme_light"
+                                 GroupName="themeSelect"
+                                 IsChecked="{Binding ViewModel.CurrentTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="☀️ 经典浅色模式" FontSize="14" FontWeight="Medium"/>
+                                <TextBlock Text=" — 界面清爽透亮，适合白天办公或高亮环境下使用" Foreground="{DynamicResource TextFillColorTertiaryBrush}" FontSize="12" Margin="10,2,0,0"/>
+                            </StackPanel>
+                        </RadioButton>
+
+                        <RadioButton Margin="5,8,0,8"
+                                 Command="{Binding ViewModel.ChangeThemeCommand, Mode=OneWay}"
+                                 CommandParameter="theme_dark"
+                                 GroupName="themeSelect"
+                                 IsChecked="{Binding ViewModel.CurrentTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🌙 极客深色模式" FontSize="14" FontWeight="Medium"/>
+                                <TextBlock Text=" — 纯黑沉浸式游戏美学，全面护眼且无任何额外性能开销" Foreground="{DynamicResource TextFillColorTertiaryBrush}" FontSize="12" Margin="10,2,0,0"/>
+                            </StackPanel>
+                        </RadioButton>
+
+                        <Border BorderBrush="{DynamicResource DividerStrokeColorDefaultBrush}" BorderThickness="0,0,0,1" Margin="5,12,5,12"/>
+
+                        <RadioButton Margin="5,8,0,8"
+                                 Command="{Binding ViewModel.ChangeThemeCommand, Mode=OneWay}"
+                                 CommandParameter="theme_acrylic_light"
+                                 GroupName="themeSelect"
+                                 IsChecked="{Binding ViewModel.CurrentTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=AcrylicLight, Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🧪 Acrylic 液态玻璃渲染 (浅色)" FontSize="14" FontWeight="SemiBold" Foreground="{DynamicResource SystemFillColorSuccessBrush}"/>
+                                <TextBlock Text=" — 高端磨砂玻璃半透明特效搭配浅色底色" Foreground="{DynamicResource TextFillColorTertiaryBrush}" FontSize="12" Margin="10,2,0,0"/>
+                            </StackPanel>
+                        </RadioButton>
+
+                        <RadioButton Margin="5,8,0,8"
+                                 Command="{Binding ViewModel.ChangeThemeCommand, Mode=OneWay}"
+                                 CommandParameter="theme_acrylic_dark"
+                                 GroupName="themeSelect"
+                                 IsChecked="{Binding ViewModel.CurrentTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=AcrylicDark, Mode=OneWay}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="💎 Acrylic 液态玻璃渲染 (深色 - 推荐)" FontSize="14" FontWeight="Bold" Foreground="{DynamicResource SystemFillColorCautionBrush}"/>
+                                <TextBlock Text=" — 赛博朋克写实风（对 GPU 有极低开销，工具箱默认开启）" Foreground="{DynamicResource TextFillColorTertiaryBrush}" FontSize="12" Margin="10,2,0,0"/>
+                            </StackPanel>
+                        </RadioButton>
+
+                    </StackPanel>
+                </Border>
+
+                <Border Background="{DynamicResource CardBackgroundFillColorSecondaryBrush}"
+                    BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="12"
+                    Padding="15"
+                    Margin="0,10,0,0">
+                    <Grid>
+                        <StackPanel>
+                            <TextBlock FontSize="14" FontWeight="SemiBold" Text="关于 Bodycam Box Compact Navigation" Foreground="{DynamicResource TextFillColorPrimaryBrush}" />
+                            <TextBlock FontSize="12" Text="Bodycam 游戏专属一体化智能优化内核工具箱" Foreground="{DynamicResource TextFillColorSecondaryBrush}" Margin="0,4,0,0"/>
+                            <TextBlock FontSize="11" Text="© 2026 Bodycam Box Team. All Rights Reserved." Foreground="{DynamicResource TextFillColorTertiaryBrush}" Margin="0,12,0,0"/>
+                        </StackPanel>
+                        
+                    </Grid>
+                </Border>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
 </Page>

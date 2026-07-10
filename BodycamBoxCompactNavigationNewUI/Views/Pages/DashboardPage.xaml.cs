@@ -57,6 +57,20 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Pages
             }
         }
 
+        private void DashboardScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            if (e.Delta < 0)
+            {
+                DashboardScrollViewer.LineDown();
+            }
+            else
+            {
+                DashboardScrollViewer.LineUp();
+            }
+
+            e.Handled = true;
+        }
+
         // ✅ 4. 查找父控件（关键方法）
         private T FindParent<T>(DependencyObject child) where T : DependencyObject
         {
@@ -86,6 +100,11 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Pages
         {
             var window = (MainWindow)Application.Current.MainWindow;
             window.Navigate(typeof(Views.Pages.LocalizationPage));
+        }
+        private void GoBodycamOptimizationPage(object sender, MouseButtonEventArgs e)
+        {
+            var window = (MainWindow)Application.Current.MainWindow;
+            window.Navigate(typeof(Views.Pages.BodycamOptimizationPage));
         }
 
     }

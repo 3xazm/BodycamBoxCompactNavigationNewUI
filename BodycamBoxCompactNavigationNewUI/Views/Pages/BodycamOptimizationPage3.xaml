@@ -1,0 +1,81 @@
+<Page
+    x:Class="BodycamBoxCompactNavigationNewUI.Views.Pages.BodycamOptimizationPage3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:local="clr-namespace:BodycamBoxCompactNavigationNewUI.Views.Pages"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}">
+
+    <!-- 根节点直接用 Grid，由外层主架构导航完美处理上下滑动 -->
+    <Grid Margin="20">
+        <StackPanel>
+
+            <!-- 画质模式快捷键指南 主卡片 -->
+            <Border CornerRadius="25"
+                    Padding="25"
+                    Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="3"
+                    Margin="0,0,0,20">
+
+                <Grid Margin="0,9,0,10">
+                    <StackPanel Margin="0,0,0,-15">
+
+                        <!-- 页面主标题 -->
+                        <TextBlock Text="优化模式快捷键切换指南"
+                                   FontSize="20"
+                                   Foreground="#2799b8"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,12"/>
+
+                        <!-- 核心操作提示 -->
+                        <TextBlock Text="💡 操作说明：在游戏运行过程中，您可以随时按下键盘对应的快捷键（F1 - F4）进行无缝热切换，画面效果与帧率将实时改变，无需重启游戏。"
+                                   Foreground="#00A896"
+                                   FontWeight="SemiBold"
+                                   TextWrapping="Wrap"
+                                   Margin="0,5,0,25"/>
+
+                        <!-- F1 模块 -->
+                        <Border BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}" BorderThickness="0,0,0,1" Margin="0,0,0,15" Padding="0,0,0,15">
+                            <StackPanel>
+                                <TextBlock Text="快捷键 [ F1 ] — 官方原版画质" FontSize="16" FontWeight="Bold" Foreground="#E0E0E0"/>
+                                <TextBlock Text="1- 恢复游戏官方原始渲染逻辑，不附带任何画面修改补丁。" Margin="0,8,0,0" TextWrapping="Wrap" Foreground="#A0A0A0"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- F2 模块 -->
+                        <Border BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}" BorderThickness="0,0,0,1" Margin="0,0,0,15" Padding="0,0,0,15">
+                            <StackPanel>
+                                <TextBlock Text="快捷键 [ F2 ] — Balanced（平衡模式）" FontSize="16" FontWeight="Bold" Foreground="#E0E0E0"/>
+                                <TextBlock Text="1- 在画面细节与流畅度之间取得最佳平衡，静态画质体感与原版几乎无异。" Margin="0,8,0,0" TextWrapping="Wrap" Foreground="#A0A0A0"/>
+                                <TextBlock Text="2- 帧率表现：稳步优化约 +5% ~ 10% FPS。" Margin="0,6,0,0" Foreground="#00FF00" FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- F3 模块 -->
+                        <Border BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}" BorderThickness="0,0,0,1" Margin="0,0,0,15" Padding="0,0,0,15">
+                            <StackPanel>
+                                <TextBlock Text="快捷键 [ F3 ] — Performance（性能模式）" FontSize="16" FontWeight="Bold" Foreground="#E0E0E0"/>
+                                <TextBlock Text="1- 采用 FPS 帧率绝对优先机制，强行过滤和关闭部分高负载的环境冗余特效。" Margin="0,8,0,0" TextWrapping="Wrap" Foreground="#A0A0A0"/>
+                                <TextBlock Text=" 推荐配置：特别适合 RTX 4050 等主流游戏显卡环境。" Margin="0,6,0,0" Foreground="#BC8F8F"/>
+                                <TextBlock Text="2- 帧率表现：画面流畅度大幅飙升约 +20% ~ 40% FPS。" Margin="0,6,0,0" Foreground="#00FF00" FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- F4 模块 -->
+                        <Border Padding="0,0,0,15">
+                            <StackPanel>
+                                <TextBlock Text="快捷键 [ F4 ] — UltraPerformance（超性能模式）" FontSize="16" FontWeight="Bold" Foreground="#E0E0E0"/>
+                                <TextBlock Text="1- 极致流畅度方案。专为入门级硬件或低显存设备强行压榨显卡潜能。" Margin="0,8,0,0" TextWrapping="Wrap" Foreground="#A0A0A0"/>
+                                <TextBlock Text=" 推荐配置：特别适合RTX 2050 / RTX 3050。" Margin="0,6,0,0" Foreground="#BC8F8F"/>
+                                <TextBlock Text="2- 帧率表现：帧率上限瞬间狂飙约 +30% ~ 60% FPS。" Margin="0,6,0,0" Foreground="#00FF00" FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </Border>
+
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+        </StackPanel>
+    </Grid>
+</Page>

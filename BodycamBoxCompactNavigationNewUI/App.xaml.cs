@@ -6,6 +6,7 @@ using BodycamBoxCompactNavigationNewUI.Views.Windows;
 using BodycamBoxCompactNavigationNewUI.WebViews.Bodycambxscn.Pages;
 using BodycamBoxCompactNavigationNewUI.WebViews.HanserCommunity.Pages;
 using BodycamBoxCompactNavigationNewUI.WebViews.AruiCommunity.Pages;
+using BodycamBoxCompactNavigationNewUI.WebViews.QingchenCommunity.Pages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,7 +30,7 @@ namespace BodycamBoxCompactNavigationNewUI
         // https://docs.microsoft.com/dotnet/core/extensions/logging
         private static readonly IHost _host = Host
             .CreateDefaultBuilder()
-            .ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(AppContext.BaseDirectory)); })
+            //.ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(AppContext.BaseDirectory)); })
             .ConfigureServices((context, services) =>
             {
                 services.AddNavigationViewPageProvider();
@@ -56,12 +57,31 @@ namespace BodycamBoxCompactNavigationNewUI
                 //services.AddSingleton<DataPage>();
                 //services.AddSingleton<DataViewModel>();
 
+
+                //分辨率
                 services.AddSingleton<ResolutionPage>();
                 services.AddSingleton<ResolutionViewModel>();
+
+                //玩家备份
                 services.AddSingleton<BackupPage>();
                 services.AddSingleton<BackupViewModel>();
+
+                //汉化包
                 services.AddSingleton<LocalizationPage>();
                 services.AddSingleton<LocalizationViewModel>();
+
+                //Bodycam优化+
+                services.AddSingleton<BodycamOptimizationPage>();
+                services.AddSingleton<BodycamOptimizationViewModel>();
+                //Bodycam优化+ page2
+                services.AddSingleton<BodycamOptimizationPage2>();
+                services.AddSingleton<BodycamOptimizationViewModel2>();
+                //Bodycam优化+ page3
+                services.AddSingleton<BodycamOptimizationPage3>();
+                services.AddSingleton<BodycamOptimizationViewModel3>();
+                //Bodycam优化+ page4
+                services.AddSingleton<BodycamOptimizationPage4>();
+                services.AddSingleton<BodycamOptimizationViewModel4>();
 
                 // 👇 你新加的页面（必须注册！）
                 services.AddSingleton<MatchDataPage>();
@@ -76,6 +96,10 @@ namespace BodycamBoxCompactNavigationNewUI
                 //WebView.AruiCommunity
                 services.AddSingleton<Arui1Page>();
                 services.AddSingleton<Arui2Page>();
+                //WebView.QingchenCommunity
+                services.AddSingleton<Qingchen1Page>();
+                services.AddSingleton<Qingchen2Page>();
+                services.AddSingleton<Qingchen3Page>();
 
                 //设置
                 services.AddSingleton<SettingsPage>();

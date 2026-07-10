@@ -3,46 +3,101 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:local="clr-namespace:BodycamBoxCompactNavigationNewUI.Views.Pages"
     Foreground="{DynamicResource TextFillColorPrimaryBrush}">
 
     <Grid Margin="20">
 
         <StackPanel>
-
             <!-- 分辨率修复 -->
             <Border CornerRadius="25"
                     Padding="25"
                     Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
-                    Margin="0,0,0,20">
+                    BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="3"
+                    Margin="0,0,0,20" >
 
-                <Grid>
+                <Grid Margin="0,9,0,10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition Width="150"/>
                     </Grid.ColumnDefinitions>
 
                     <!-- 左边 -->
-                    <StackPanel>
-                        <TextBlock Text="分辨率修复"
+                    <StackPanel Margin="0,0,0,-15">
+                        <TextBlock Text="分辨率修复 1"
                                    FontSize="20"
+                                   Foreground="#2799b8"
                                    FontWeight="Bold"/>
-
+            
                         <TextBlock Text="{Binding ViewModel.CurrentResolution}"
-                                   Margin="0,10,0,0"/>
+                                    Foreground="#00A896"
+                                    Margin="0,12,0,0"/>
+                        <TextBlock Text="{Binding ViewModel.BodycamResolution}"
+                                    Foreground="{Binding ViewModel.BodycamResolutionBrush}"
+                                    Margin="0,8,0,0"/>
+                        <TextBlock Text="{Binding ViewModel.ResolutionStatus}"
+                                    Foreground="{Binding ViewModel.ResolutionStatusBrush}"
+                                    Margin="0,8,0,0"
+                                    FontWeight="SemiBold"/>
 
-                        <TextBlock Text="修复笔记本或多显示器环境下导致Bodycam的分辨率异常问题"
-                                   Margin="0,10,0,0"
+                        <TextBlock Text=" "
+                                    Margin="0,10,0,0"
+                                    TextWrapping="Wrap"/>
+
+                        <TextBlock Text="1- 修复笔记本 或 多显示器环境下导致Bodycam的分辨率异常问题。"
+                                    Margin="0,20,0,0"
+                                    TextWrapping="Wrap"/>
+                        <TextBlock Text="2- 如画面不完整等 以及 无法对画面正常点击等。"
+                                    Margin="0,10,0,0"
+                                    TextWrapping="Wrap"/>
+                        <TextBlock Text="3- 画面下面出现黑边，画面移出屏幕外等。"
+                                    Margin="0,10,0,0"
+                                    TextWrapping="Wrap"/>
+                        <TextBlock Text=" --*如果Bodycam工具箱加载不出来当前分辨率可点击刷新一下按钮。"
+                                   Margin="0,20,0,0"
+                                   Foreground="#BC8F8F"
                                    TextWrapping="Wrap"/>
                     </StackPanel>
 
                     <!-- 右边按钮 -->
                     <Button Grid.Column="1"
-                            Content="修复"
-                            Width="100"
-                            Height="35"
+                            Content="0.破坏分辨率"
+                            Width="110"
+                            Height="30"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Foreground="#D00A07"
+                            Command="{Binding ViewModel.DestroyResolutionCommand}" Margin="0,-2,0,0"/>
+
+                    <!-- 右边按钮 -->
+                    <Button Grid.Column="1"
+                            Content="1.修复分辨率"
+                            Width="115"
+                            Height="40"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Command="{Binding ViewModel.FixResolutionCommand}"/>
+                            Foreground="#00FF00"
+                            BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                            BorderThickness="4"
+                            Command="{Binding ViewModel.FixResolutionCommand}" 
+                            Margin="-10,0,0,0"
+                            />
+
+                    <!-- 右边按钮 -->
+                    <Button Grid.Column="1"
+                            Content="2.刷新一下"
+                            Width="115"
+                            Height="40"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Foreground="#BC8F8F"
+                            BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                            BorderThickness="4"
+                            Command="{Binding ViewModel.RefreshResolutionCommand}" 
+                            Margin="-10,120,0,0"
+                            />
+
                 </Grid>
             </Border>
 
@@ -50,21 +105,35 @@
             <Border CornerRadius="25"
                     Padding="25"
                     Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
-					Margin="0,0,0,20">
+                    BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+					Margin="0,0,0,20" 
+                    BorderThickness="3"
+                    Height="200"
+                    >
 
-                <Grid>
+                <Grid Height="178">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition Width="150"/>
                     </Grid.ColumnDefinitions>
 
                     <StackPanel>
-                        <TextBlock Text="黑屏修复"
+                        <TextBlock Text="黑屏修复 2"
                                    FontSize="20"
+                                   Foreground="#2799b8"
                                    FontWeight="Bold"/>
 
-                        <TextBlock Text="本修复方案针对特定兼容性黑屏有效。注：仅支持正版授权版本，非官方分发版本无法保证修复效果，修复过程预计耗时 3~6 秒。"
-                                   Margin="0,10,0,0"
+                        <TextBlock Text="1- 本修复方案针对特定兼容性黑屏有效 如黑屏有声音/音乐等"
+                                   Margin="0,20,0,0"
+                                   TextWrapping="Wrap"/>
+                        <TextBlock Text="2- 仅支持正版Bodycam版本，非官方版本 或 假入库无法保证修复效果。"
+                                   Margin="0,9,0,0"
+                                   TextWrapping="Wrap"/>
+                        <TextBlock Text="3- 如黑屏嘟嘟的响，可能需检查Watt Toolkit或第三方加速器等"
+                                   Margin="0,9,0,0"
+                                   TextWrapping="Wrap"/>
+                        <TextBlock Text="4- 修复过程预计耗时6 秒。"
+                                   Margin="0,9,0,0"
                                    TextWrapping="Wrap"/>
                     </StackPanel>
 
@@ -78,40 +147,49 @@
                 </Grid>
             </Border>
 
-			<!-- 五颜六色彩虹修复 -->
-			<Border CornerRadius="25"
+            <!-- 五颜六色彩虹修复 -->
+            <Border CornerRadius="25"
                     Padding="25"
                     Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
-					Margin="0,0,0,20">
-				
+                    BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+					Margin="0,0,0,20"
+                    BorderThickness="3"
+                    >
 
-				<Grid>
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition />
-						<ColumnDefinition Width="150"/>
-					</Grid.ColumnDefinitions>
 
-					<StackPanel>
-						<TextBlock Text="五颜六色彩虹修复"
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="150"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel>
+                        <TextBlock Text="五颜六色彩虹修复 3"
                                    FontSize="20"
+                                   Foreground="#2799b8"
                                    FontWeight="Bold"/>
 
-						<TextBlock Text="五颜六色彩虹修复是指游戏中出现的彩虹色异常问题和按Tab玩家数据模板出现闪屏修复发方案。"
-                                   Margin="0,10,0,0"
+                        <TextBlock Text="1- 五颜六色彩虹修复是指游戏中出现的彩虹色异常问题 或 闪屏"
+                                   Margin="0,20,0,0"
                                    TextWrapping="Wrap"/>
-					</StackPanel>
+                        <TextBlock Text="2- 按Tab键的玩家数据面板出现闪屏 或 彩色异常。"
+                                   Margin="0,9,0,0"
+                                   TextWrapping="Wrap"/>
+                        <TextBlock Text="3- 开局时出现彩虹色异常。"
+                                    Margin="0,9,0,0"
+                                    TextWrapping="Wrap"/>
+                    </StackPanel>
 
-					<Button Grid.Column="1"
+                    <Button Grid.Column="1"
                             Content="修复"
                             Width="100"
                             Height="35"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Command="{Binding ViewModel.FixRainbowScreenCommand}"/>
-				</Grid>
-			</Border>
-			
-			
+                </Grid>
+            </Border>
+
         </StackPanel>
     </Grid>
 </Page>

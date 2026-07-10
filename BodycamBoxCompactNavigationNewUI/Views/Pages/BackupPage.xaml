@@ -12,6 +12,7 @@
             <TextBlock Text="Bodycam 玩家数据保存"
                FontSize="24"
                FontWeight="SemiBold"
+               Foreground="#a4c9cc"
                Margin="0,0,0,20"/>
 
             <!-- 卡片 -->

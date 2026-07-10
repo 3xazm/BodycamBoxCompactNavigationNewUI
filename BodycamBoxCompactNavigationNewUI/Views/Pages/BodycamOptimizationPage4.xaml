@@ -1,0 +1,102 @@
+<Page x:Class="BodycamBoxCompactNavigationNewUI.Views.Pages.BodycamOptimizationPage4"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Title="BodycamOptimizationPage4"
+      d:DesignHeight="700" d:DesignWidth="800">
+
+	<Grid Margin="20">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<TextBlock Text="🛠️ 游戏异常修复 &amp; 深度进阶建议"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                   Margin="10,0,0,25"/>
+
+		<StackPanel Grid.Row="1">
+
+			<Border Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="3"
+                    CornerRadius="25"
+                    Padding="25"
+                    Margin="0,0,0,20">
+				<StackPanel>
+					<TextBlock Text="⚠️ 场景光照 &amp; 手电筒“鬼影/拖影”异常修复"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Foreground="{DynamicResource SystemFillColorCautionBrush}"/>
+
+					<TextBlock Text="【问题表现】 在游戏内的夜间、昏暗区域，或者开启战术手电筒时，光源及物体移动边缘会出现明显的运动矢量残影（Ghosting 重影现象）。"
+                               Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                               TextWrapping="Wrap"
+                               Margin="0,12,0,0"
+                               FontSize="14"
+                               LineHeight="22"/>
+
+					<TextBlock Text="【解决路径】 进入游戏内 ➔ [设置 Settings] ➔ [图形 Graphics] ➔ [英伟达 DLSS (NVIDIA DLSS)]"
+                               Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                               TextWrapping="Wrap"
+                               Margin="0,12,0,0"
+                               FontSize="14"
+                               FontWeight="SemiBold"/>
+
+					<TextBlock Text="【调整方案】 将其切换为 &quot;超高清画质 Ultra Quality&quot; / &quot;画质优先 Quality&quot; 或 &quot;平衡 Balanced&quot;。"
+                               Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                               TextWrapping="Wrap"
+                               Margin="0,8,0,0"
+                               FontSize="14"/>
+
+					<TextBlock Text="💡 极客推荐：强烈建议将其调至【平衡模式 Balanced】。该模式不仅能完美消除虚幻5引擎底层带来的运动鬼影，还能在极端暗光环境下为你提供最佳的帧率稳定性！"
+                               Foreground="{DynamicResource SystemFillColorSuccessBrush}"
+                               TextWrapping="Wrap"
+                               Margin="0,15,0,0"
+                               FontSize="14"
+                               FontWeight="SemiBold"
+                               LineHeight="22"/>
+				</StackPanel>
+			</Border>
+
+			<Border Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="3"
+                    CornerRadius="25"
+                    Padding="25">
+				<StackPanel>
+					<TextBlock Text="🚀 高负载环境下的二次深度优化（依然卡顿对策）"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Foreground="{DynamicResource SystemFillColorSuccessBrush}"/>
+
+                    <TextBlock Text="【问题表现】 已经应用了工具箱的基础优化包，但在部分极其吃配置的复杂地图或激烈交火场景下，游戏帧率依然不够理想、仍有间歇性卡顿。"
+                               Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                               TextWrapping="Wrap"
+                               Margin="0,12,0,0"
+                               FontSize="14"
+                               LineHeight="22"/>
+
+                    <TextBlock Text="【进阶对策】 前往游戏内 ➔ [设置 Settings] ➔ [图形 Graphics] ➔ [英伟达 DLSS]，将其开启并切换至 &quot;超高清画质&quot; / &quot;画质优先&quot; 或 &quot;平衡 Balanced&quot;。"
+                               Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                               TextWrapping="Wrap"
+                               Margin="0,8,0,0"
+                               FontSize="14"/>
+
+					<TextBlock Text="⚡ 终极红利：本工具箱提供的【Bodycam专属内核优化】+ 官方【DLSS 超级分辨率】深度组合绑定，才是解锁显卡极限潜能的正确姿势。二者叠加后，低阶显卡亦能迎来飞跃性的性能暴涨，彻底告别PPT！"
+                               Foreground="{DynamicResource SystemFillColorSuccessBrush}"
+                               TextWrapping="Wrap"
+                               Margin="0,15,0,0"
+                               FontSize="14"
+                               FontWeight="Bold"
+                               LineHeight="22"/>
+				</StackPanel>
+			</Border>
+
+		</StackPanel>
+	</Grid>
+</Page>

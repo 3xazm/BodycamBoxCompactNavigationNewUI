@@ -1,0 +1,128 @@
+<Page x:Class="BodycamBoxCompactNavigationNewUI.Views.Pages.BodycamOptimizationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      Foreground="{DynamicResource TextFillColorPrimaryBrush}">
+    <Grid Margin="24,24,24,24">
+            <Border HorizontalAlignment="Stretch"
+                    VerticalAlignment="Top"
+                    CornerRadius="8"
+                    Padding="24"
+                    Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="1">
+                <StackPanel>
+                    <TextBlock Text="Bodycam优化V1.0.0"
+                               FontSize="26"
+                               FontWeight="SemiBold"
+                               Margin="0,0,0,14" 
+                               Foreground="#009966"/>
+
+                    <TextBlock Text="说明：Bodycam优化v1.0.0为测试版本 优化之后可提升20~40%性能。"
+                               FontSize="15"
+                               TextWrapping="Wrap"
+                               Opacity="0.86"
+                               Margin="0,0,0,12" />
+
+                    <Expander Header="展开更多信息"
+                              Margin="0,0,0,18">
+                        <StackPanel Margin="0,10,0,0">
+                            <TextBlock Text="新增地图："
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Opacity="0.78"
+                                       Margin="0,0,0,8" 
+                                       Foreground="#48D1CC"/>
+                            <TextBlock Text="   AirSoft（软弹射击场）"
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Opacity="0.78"
+                                       Margin="0,0,0,6" />
+                            <TextBlock Text="   Backrooms（后室）"
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Opacity="0.78"
+                                       Margin="0,0,0,6" />
+                            <TextBlock Text="   BombHouse（炸弹房）"
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Opacity="0.78"
+                                       Margin="0,0,0,6" />
+                            <TextBlock Text="   CQB（孤儿院）"
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Opacity="0.78"
+                                       Margin="0,0,0,6" />
+                            <TextBlock Text="   Hospital（医院）"
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Opacity="0.78"
+                                       Margin="0,0,0,6" />
+                            <TextBlock Text="   Paintball（彩弹射击场）"
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Opacity="0.78"
+                                       Margin="0,0,0,6" />
+                            <TextBlock Text="   Public Pool（公共游池）"
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Opacity="0.78"
+                                       Margin="0,0,0,6" />
+                            <TextBlock Text="   Rome（罗马）"
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Opacity="0.78"
+                                       Margin="0,0,0,6" />
+                            <TextBlock Text="   RussianBuilding（俄式建筑）"
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Opacity="0.78"
+                                       Margin="0,0,0,6" />
+                            <TextBlock Text="   WornHouse（破旧豪宅）"
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Opacity="0.78"
+                                       Margin="0,0,0,8" />
+
+                            
+                            <TextBlock Text="新增僵尸地图："
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Opacity="0.78" 
+                                       Margin="0,0,0,8"
+                                       Foreground="#F08080"/>
+                            <TextBlock Text="   Village（僵尸村）"
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Opacity="0.78"
+                                       Margin="0,0,0,4" />
+                            <TextBlock Text="   Asylum（精神病院）"
+                                       TextWrapping="Wrap"
+                                       FontSize="14"
+                                       Opacity="0.78"
+                                       Margin="0,0,0,4" />
+                           
+                        </StackPanel>
+                    </Expander>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0,0,0,20">
+                        <ui:Button Content="添加优化"
+                                   Width="112"
+                                   Margin="0,0,12,0"
+                                   Click="AddOptimization_Click" />
+
+                        <ui:Button Content="移除优化"
+                                   Width="112"
+                                   Appearance="Secondary"
+                                   Click="RemoveOptimization_Click" />
+                    </StackPanel>
+
+                    <TextBlock Text="2026年7月6日"
+                               FontSize="14"
+                               Foreground="#90E0EF"
+                               Opacity="0.82" />
+                </StackPanel>
+            </Border>
+    </Grid>
+</Page>

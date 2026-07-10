@@ -1,4 +1,7 @@
-﻿using BodycamBoxCompactNavigationNewUI.ViewModels.Windows;
+﻿using System; // 🌟 补上了这个，解决 Exception、Uri 报错问题
+using System.Windows;
+using System.Windows.Media.Imaging;
+using BodycamBoxCompactNavigationNewUI.ViewModels.Windows;
 using BodycamBoxCompactNavigationNewUI.Views.Pages;
 using System.Windows.Controls;
 using Wpf.Ui;
@@ -6,6 +9,7 @@ using Wpf.Ui.Abstractions;
 using Wpf.Ui.Appearance;
 using Wpf.Ui.Controls;
 using System.Windows.Media.Imaging;
+using System.Windows.Media;
 
 namespace BodycamBoxCompactNavigationNewUI.Views.Windows
 {
@@ -25,7 +29,33 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Windows
             SystemThemeWatcher.Watch(this);
 
             InitializeComponent();
-            
+
+            // 🌟 核心：当主窗口加载完毕后，用 C# 强行把导航控件内部的白墙砸碎
+            this.Loaded += (s, e) =>
+            {
+                if (RootNavigation != null)
+                {
+                    // 1. 强行将组件本身的背景设为透明
+                    RootNavigation.Background = Brushes.Transparent;
+
+                    // 2. 挖掘内部真正承载 Page 的 Frame
+                    // Wpf.Ui 的 NavigationView 内部使用了一个名叫 "TemplateFrame" 的 Frame 控件
+                    if (RootNavigation.Template.FindName("TemplateFrame", RootNavigation) is Frame frame)
+                    {
+                        frame.Background = Brushes.Transparent;
+                    }
+                }
+            };
+
+
+            // 2. 重新补上这行核心监听（千万不能删！）
+            // 它负责拉起全局主题钩子，让 SettingsViewModel 能够合法读取和同步主题
+            Wpf.Ui.Appearance.SystemThemeWatcher.Watch(this);
+
+            // 3. 在有了 Watch 监听之后，再安全地应用你初始化好的深色模式和 Acrylic 渲染
+            Wpf.Ui.Appearance.ApplicationThemeManager.Apply(Wpf.Ui.Appearance.ApplicationTheme.Dark);
+
+
             // 在这里添加设置图标的代码         
             try
             {          

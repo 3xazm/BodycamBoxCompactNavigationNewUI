@@ -25,10 +25,23 @@
 	
 	    <!-- Native DLL 自动释放到 AppData -->
 	    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+
+		<Version>1.0.2</Version>
+		<FileVersion>1.0.2.0</FileVersion>
+		<AssemblyVersion>1.0.2.0</AssemblyVersion>
 	</PropertyGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Bodycam2name.jpg" />
     <Resource Include="Assets\qvertionmiku.ico" />
+    <EmbeddedResource Include="OptimizationBC\2026n06y07r\dwmapi.dll" />
+    <EmbeddedResource Include="OptimizationBC\2026n06y07r\Mods\BodycamOptimizer\enabled.txt" />
+    <EmbeddedResource Include="OptimizationBC\2026n06y07r\Mods\BodycamOptimizer\Scripts\main.lua" />
+    <EmbeddedResource Include="OptimizationBC\2026n06y07r\Mods\mods.txt" />
+    <EmbeddedResource Include="OptimizationBC\2026n06y07r\Mods\shared\jsbProfiler\jsbProfi.lua" />
+    <EmbeddedResource Include="OptimizationBC\2026n06y07r\Mods\shared\UEHelpers\UEHelpers.lua" />
+    <EmbeddedResource Include="OptimizationBC\2026n06y07r\UE4SS-settings.ini" />
+    <EmbeddedResource Include="OptimizationBC\2026n06y07r\UE4SS.dll" />
     <EmbeddedResource Include="playAssets\2025\BodycamLocalization_P.pak">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -61,11 +74,20 @@
 
   <ItemGroup>
     <None Remove="Assets\app.ico" />
+    <None Remove="Assets\Bodycam2name.jpg" />
     <None Remove="Assets\bodycambackg.jpg" />
     <None Remove="Assets\bodycamsteam.jpg" />
     <None Remove="Assets\qvertionmiku.ico" />
     <None Remove="Assets\wpfui-icon-256.png" />
     <None Remove="Assets\wpfui-icon-1024.png" />
+    <None Remove="OptimizationBC\2026n06y07r\dwmapi.dll" />
+    <None Remove="OptimizationBC\2026n06y07r\Mods\BodycamOptimizer\enabled.txt" />
+    <None Remove="OptimizationBC\2026n06y07r\Mods\BodycamOptimizer\Scripts\main.lua" />
+    <None Remove="OptimizationBC\2026n06y07r\Mods\mods.txt" />
+    <None Remove="OptimizationBC\2026n06y07r\Mods\shared\jsbProfiler\jsbProfi.lua" />
+    <None Remove="OptimizationBC\2026n06y07r\Mods\shared\UEHelpers\UEHelpers.lua" />
+    <None Remove="OptimizationBC\2026n06y07r\UE4SS-settings.ini" />
+    <None Remove="OptimizationBC\2026n06y07r\UE4SS.dll" />
     <None Remove="playAssets\2025\BodycamLocalization_P.pak" />
     <None Remove="playAssets\2025\BodycamLocalization_P.ucas" />
     <None Remove="playAssets\2025\BodycamLocalization_P.utoc" />
@@ -83,7 +105,9 @@
 
   <ItemGroup>
     <Resource Include="Assets\app.ico" />
-    <Resource Include="Assets\bodycambackg.jpg" />
+    <Resource Include="Assets\bodycambackg.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\bodycamsteam.jpg" />
     <Resource Include="Assets\wpfui-icon-256.png" />
     <Resource Include="Assets\wpfui-icon-1024.png" />
