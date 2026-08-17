@@ -100,6 +100,10 @@
     <None Remove="playAssets\2026\patch\BodycamLocalization_P.pak" />
     <None Remove="playAssets\2026\patch\BodycamLocalization_P.ucas" />
     <None Remove="playAssets\2026\patch\BodycamLocalization_P.utoc" />
+    <None Remove="playAssets\y2026f9f02bodycamTestv08\BodycamLocalization_P.pak" />
+    <None Remove="playAssets\y2026f9f02bodycamTestv08\BodycamLocalization_P.ucas" />
+    <None Remove="playAssets\y2026f9f02bodycamTestv08\BodycamLocalization_P.utoc" />
+    <None Remove="playAssets\zhFontlibrary\BodycamzhYaHeiFontsSC_P.pak" />
     <None Remove="wpfui-icon.ico" />
   </ItemGroup>
 
@@ -129,6 +133,10 @@
     <EmbeddedResource Include="playAssets\2026\patch\BodycamLocalization_P.pak" />
     <EmbeddedResource Include="playAssets\2026\patch\BodycamLocalization_P.ucas" />
     <EmbeddedResource Include="playAssets\2026\patch\BodycamLocalization_P.utoc" />
+    <EmbeddedResource Include="playAssets\y2026f9f02bodycamTestv08\BodycamLocalization_P.pak" />
+    <EmbeddedResource Include="playAssets\y2026f9f02bodycamTestv08\BodycamLocalization_P.ucas" />
+    <EmbeddedResource Include="playAssets\y2026f9f02bodycamTestv08\BodycamLocalization_P.utoc" />
+    <EmbeddedResource Include="playAssets\zhFontlibrary\BodycamzhYaHeiFontsSC_P.pak" />
   </ItemGroup>
 
 </Project>

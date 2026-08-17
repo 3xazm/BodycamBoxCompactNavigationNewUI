@@ -8,7 +8,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
     public partial class MainWindowViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _applicationTitle = "Bodycam工具箱 V2.5.0   q群1: 865048887    q群2: 470710001 ";
+        private string _applicationTitle = "Bodycam工具箱 V2.5.1   q群1: 865048887    q群2: 470710001 ";
 
         [ObservableProperty]
         private ObservableCollection<object> _menuItems = new()
@@ -38,6 +38,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Translate24 },
                 TargetPageType = typeof(Views.Pages.LocalizationPage)
             },
+            /*
             new NavigationViewItem()
             {
                 Content = "Bodycam优化+",                                                                
@@ -71,7 +72,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
                     }
                 }
             },
-
+            */
             //分割线 1
             new NavigationViewItemSeparator(),
             new NavigationViewItem()

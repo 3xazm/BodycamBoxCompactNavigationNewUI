@@ -178,7 +178,7 @@
                     </Grid>
                 </Border>
 
-                <!-- Bodycam优化+ -->
+                <!-- Bodycam优化+ 
                 <Border CornerRadius="12"
                         Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
                        BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
@@ -212,7 +212,7 @@
                         </StackPanel>
 
                     </Grid>
-                </Border>
+                </Border> -->
 
             </StackPanel>
 

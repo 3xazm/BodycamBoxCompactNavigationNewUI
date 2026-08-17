@@ -10,8 +10,10 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Pages
 {
     public partial class BodycamOptimizationViewModel2 : ObservableObject
     {
-        // ----- 1. 文本与颜色属性定义 -----
+        //地址注入
+        public static BodycamOptimizationViewModel2? Current { get; private set; }
 
+        // ----- 1. 文本与颜色属性定义 -----
         [ObservableProperty]
         private string _faceMosaicStatus = "检测中...";
 
@@ -35,14 +37,14 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Pages
 
         // 核心功能：刷新按钮绑定的命令
         [RelayCommand]
-        private void Refresh()
+        public void Refresh()
         {
             InitializeLuaPath(); // 重新定位文件
             LoadAllStatuses();   // 重新读取数值与上色
         }
 
         // ----- 3. 全盘符自动定位算法 -----
-        private void InitializeLuaPath()
+        public void InitializeLuaPath()
         {
             string? gameRoot = FindBodycamSteamPath();
             if (!string.IsNullOrEmpty(gameRoot))

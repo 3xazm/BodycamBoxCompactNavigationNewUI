@@ -68,7 +68,7 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Pages
                     }
 
                     string[] parts = line.Split('"');
-                    if (parts.Length > 3)                                                              
+                    if (parts.Length > 3)
                     {
                         libraries.Add(parts[3].Replace(@"\\", @"\"));
                     }
@@ -185,7 +185,7 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Pages
                     return;
                 }
 
-                string modsPath = Path.Combine(targetPath, "Mods");
+                string modsPath = Path.Combine(targetPath, @"Mods\BodycamOptimizer");
                 if (Directory.Exists(modsPath))
                 {
                     Directory.Delete(modsPath, true);

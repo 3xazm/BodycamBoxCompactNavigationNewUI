@@ -10,17 +10,7 @@
     <Grid Margin="20">
         <StackPanel>
 
-            <!-- 顶部工具栏：放置与你分辨率页面一模一样款式的“刷新一下”按钮 -->
-            <Grid Margin="0,0,0,15">
-                <Button Content="刷新一下"
-                        Width="115"
-                        Height="40"
-                        HorizontalAlignment="Right"
-                        Foreground="#BC8F8F"
-                        BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
-                        BorderThickness="4"
-                        Command="{Binding ViewModel.RefreshCommand}"/>
-            </Grid>
+
 
             <!-- 脸部马赛克 模块 -->
             <Border CornerRadius="25"
@@ -64,7 +54,7 @@
                                    Margin="0,10,0,0"
                                    TextWrapping="Wrap"/>
 
-                        
+
                     </StackPanel>
 
                     <!-- 右边控制按钮 -->
@@ -82,59 +72,7 @@
                 </Grid>
             </Border>
 
-            <!-- 全局去模糊（极致超清） 模块 -->
-            <Border CornerRadius="25"
-                    Padding="25"
-                    Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
-                    BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
-                    BorderThickness="3"
-                    Margin="0,0,0,20">
 
-                <Grid Margin="0,9,0,10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="150"/>
-                    </Grid.ColumnDefinitions>
-
-                    <!-- 左边内容区 -->
-                    <StackPanel Margin="0,0,0,-15">
-                        <TextBlock Text="全局动态 2"
-                                   FontSize="20"
-                                   Foreground="#00CED1"
-                                   FontWeight="Bold"/>
-
-                        <!-- 动态状态显示：绑定后端 Brush，开关红绿灯 -->
-                        <TextBlock Text="{Binding ViewModel.FullDynamicBlurStatus}"
-                                   Foreground="{Binding ViewModel.FullDynamicBlurStatusBrush}"
-                                   FontWeight="SemiBold"
-                                   Margin="0,12,0,0"/>
-
-                        <TextBlock Text=" " Margin="0,10,0,0" TextWrapping="Wrap"/>
-
-                        <!-- 条目说明 -->
-                        <TextBlock Text="该模式激活后，支持通过快捷键 F10 自由切换：单次触发移除镜头污垢与脸部马赛克，二次触发恢复原样。"
-                                   Margin="0,20,0,0"
-                                   TextWrapping="Wrap"/>
-
-                        
-
-                        
-                    </StackPanel>
-
-                    <!-- 右边控制按钮 -->
-                    <Button Grid.Column="1"
-                            Content="关闭 / 激活"
-                            Width="115"
-                            Height="40"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Foreground="#00CED1"
-                            BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
-                            BorderThickness="4"
-                            Command="{Binding ViewModel.ToggleFullDynamicBlurCommand}"
-                            Margin="-10,0,0,0"/>
-                </Grid>
-            </Border>
 
         </StackPanel>
     </Grid>
