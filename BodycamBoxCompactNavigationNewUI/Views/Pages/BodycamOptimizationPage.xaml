@@ -12,13 +12,13 @@
                     BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
                     BorderThickness="1">
                 <StackPanel>
-                    <TextBlock Text="Bodycam优化V1.0.0"
+                    <TextBlock Text="Bodycam马赛克"
                                FontSize="26"
                                FontWeight="SemiBold"
                                Margin="0,0,0,14" 
                                Foreground="#009966"/>
 
-                    <TextBlock Text="说明：Bodycam优化v1.0.0为测试版本 优化之后可提升20~40%性能。"
+                    <TextBlock Text="说明：Bodycam马赛克启动之后可将马赛克关闭"
                                FontSize="15"
                                TextWrapping="Wrap"
                                Opacity="0.86"
@@ -26,7 +26,17 @@
 
                     <Expander Header="展开更多信息"
                               Margin="0,0,0,18">
+                        
                         <StackPanel Margin="0,10,0,0">
+
+                        <TextBlock Text="懒得写其他说明了，反正就是关闭脸部的马赛克"
+                                   TextWrapping="Wrap"
+                                   FontSize="14"
+                                   Opacity="0.78"
+                                   Margin="0,0,0,8" 
+                                   Foreground="#48D1CC"/>
+
+                        <!--
                             <TextBlock Text="新增地图："
                                        TextWrapping="Wrap"
                                        FontSize="14"
@@ -101,18 +111,18 @@
                                        FontSize="14"
                                        Opacity="0.78"
                                        Margin="0,0,0,4" />
-                           
+                           -->
                         </StackPanel>
                     </Expander>
 
                     <StackPanel Orientation="Horizontal"
                                 Margin="0,0,0,20">
-                        <ui:Button Content="添加优化"
+                        <ui:Button Content="添加模式"
                                    Width="112"
                                    Margin="0,0,12,0"
                                    Click="AddOptimization_Click" />
 
-                        <ui:Button Content="移除优化"
+                        <ui:Button Content="移除模式"
                                    Width="112"
                                    Appearance="Secondary"
                                    Click="RemoveOptimization_Click" />

@@ -1582,7 +1582,7 @@ end
 ----------------------------------------------------------
 -- Face Mosaic
 ----------------------------------------------------------
-local FaceMosaicEnabled = false
+local FaceMosaicEnabled = true  --默认false
 local FaceMosaicState = true     -- 当前状态：true=有马赛克，false=无马赛克
 
 local BLUR_MATERIAL = "MaterialInstanceConstant /Game/Mosaic_Pixelization_Material_Pack/Mosaic_Pixelization_Materials/MIPP_BodycamMosaicEffect.MIPP_BodycamMosaicEffect"
@@ -1718,6 +1718,8 @@ end
 ----------------------------------------------------------
 -- Keybinds
 ----------------------------------------------------------
+
+--[[
 RegisterKeyBind(Key.F1, function()
     SetPreset("Vanilla Graphics")
 end)
@@ -1733,7 +1735,10 @@ end)
 RegisterKeyBind(Key.F4, function()
     SetPreset("Ultra Performance")
 end)    
+]]
 
 RegisterKeyBind(Key.F9, ToggleFaceMosaic)
 
+--[[
 RegisterKeyBind(Key.F10, ToggleFullDynamicBlur)
+]]

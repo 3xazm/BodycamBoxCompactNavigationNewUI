@@ -8,7 +8,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
     public partial class MainWindowViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _applicationTitle = "Bodycam工具箱 V2.5.1   q群1: 865048887    q群2: 470710001 ";
+        private string _applicationTitle = "Bodycam工具箱 V2.5.2   q群1: 865048887    q群2: 470710001 ";
 
         [ObservableProperty]
         private ObservableCollection<object> _menuItems = new()
@@ -38,26 +38,27 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Translate24 },
                 TargetPageType = typeof(Views.Pages.LocalizationPage)
             },
-            /*
+            
             new NavigationViewItem()
             {
-                Content = "Bodycam优化+",                                                                
+                Content = "Bodycam模式",                                                                
                 Icon = new SymbolIcon { Symbol = SymbolRegular.TopSpeed24 },
                 TargetPageType = typeof(Views.Pages.BodycamOptimizationPage),
                 MenuItems =
                 {
                     new NavigationViewItem()
                     {
-                        Content = "优化添加",
+                        Content = "模式添加",
                         Icon = new SymbolIcon { Symbol = SymbolRegular.AddSquareMultiple16 },
                         TargetPageType = typeof(Views.Pages.BodycamOptimizationPage)
                     },
                     new NavigationViewItem()
                     {
-                        Content = "额外模式",
+                        Content = "其他模式",
                         Icon = new SymbolIcon { Symbol = SymbolRegular.AppsAddIn20 },
                         TargetPageType = typeof(Views.Pages.BodycamOptimizationPage2)
                     },
+                    /*
                     new NavigationViewItem()
                     {
                         Content = "如何使用？",
@@ -69,10 +70,10 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Windows
                         Content = "游戏问题/建议",
                         Icon = new SymbolIcon { Symbol = SymbolRegular.Attach12 },
                         TargetPageType = typeof(Views.Pages.BodycamOptimizationPage4)
-                    }
+                    }*/
                 }
             },
-            */
+            
             //分割线 1
             new NavigationViewItemSeparator(),
             new NavigationViewItem()

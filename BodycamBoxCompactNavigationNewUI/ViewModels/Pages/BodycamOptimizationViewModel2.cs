@@ -108,10 +108,10 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Pages
         {
             if (string.IsNullOrEmpty(_luaPath) || !File.Exists(_luaPath))
             {
-                FaceMosaicStatus = "状态：未检测到优化模块 (请先前往[添加优化]页面启用)";
+                FaceMosaicStatus = "状态：未检测到 模式模块 (请先前往[添加优化]页面启用)";
                 FaceMosaicStatusBrush = Brushes.Gold;
 
-                FullDynamicBlurStatus = "状态：未检测到优化模块 (请先前往[添加优化]页面启用)";
+                FullDynamicBlurStatus = "状态：未检测到 模式模块 (请先前往[添加优化]页面启用)";
                 FullDynamicBlurStatusBrush = Brushes.Gold;
                 return;
             }
@@ -195,7 +195,7 @@ namespace BodycamBoxCompactNavigationNewUI.ViewModels.Pages
                 if (string.IsNullOrEmpty(_luaPath) || !File.Exists(_luaPath))
                 {
                     //MessageBox.Show("未找到 main.lua 配置文件，请确认游戏是否完整安装！", "Bodycam工具箱", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    MessageBox.Show("未添加优化模式，请去添加！", "Bodycam工具箱", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("未添加 bodycam模式，请去添加！", "Bodycam工具箱", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
