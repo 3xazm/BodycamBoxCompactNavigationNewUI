@@ -106,6 +106,9 @@
     <None Remove="playAssets\y2026f9f02bodycamTestv08xxx05ri\BodycamLocalization_P.pak" />
     <None Remove="playAssets\y2026f9f02bodycamTestv08xxx05ri\BodycamLocalization_P.ucas" />
     <None Remove="playAssets\y2026f9f02bodycamTestv08xxx05ri\BodycamLocalization_P.utoc" />
+    <None Remove="playAssets\y2026f9f02bodycamTestv08xxx07ri\BodycamLocalization_P.pak" />
+    <None Remove="playAssets\y2026f9f02bodycamTestv08xxx07ri\BodycamLocalization_P.ucas" />
+    <None Remove="playAssets\y2026f9f02bodycamTestv08xxx07ri\BodycamLocalization_P.utoc" />
     <None Remove="playAssets\y2026f9f02bodycamTestv08\BodycamLocalization_P.pak" />
     <None Remove="playAssets\y2026f9f02bodycamTestv08\BodycamLocalization_P.ucas" />
     <None Remove="playAssets\y2026f9f02bodycamTestv08\BodycamLocalization_P.utoc" />
@@ -119,6 +122,9 @@
     <EmbeddedResource Include="playAssets\y2026f9f02bodycamTestv08xxx05ri\BodycamLocalization_P.pak" />
     <EmbeddedResource Include="playAssets\y2026f9f02bodycamTestv08xxx05ri\BodycamLocalization_P.ucas" />
     <EmbeddedResource Include="playAssets\y2026f9f02bodycamTestv08xxx05ri\BodycamLocalization_P.utoc" />
+    <EmbeddedResource Include="playAssets\y2026f9f02bodycamTestv08xxx07ri\BodycamLocalization_P.pak" />
+    <EmbeddedResource Include="playAssets\y2026f9f02bodycamTestv08xxx07ri\BodycamLocalization_P.ucas" />
+    <EmbeddedResource Include="playAssets\y2026f9f02bodycamTestv08xxx07ri\BodycamLocalization_P.utoc" />
   </ItemGroup>
 
   <ItemGroup>
