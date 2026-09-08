@@ -338,7 +338,16 @@ namespace BodycamBoxCompactNavigationNewUI.Views.Pages
         }
 
         // ===============================
-        // y2026f9f02bodycamTestv08   05 汉化按钮
+        // y2026f9f02bodycamTestv08   07 汉化按钮
+        // ===============================
+        private void Addy2026f9f02bodycamTestv08xxx08ri_Click(object sender, RoutedEventArgs e)
+        {
+            ExtractAndInstall("y2026f9f02bodycamTestv08xxx08ri");
+            zhFontlibraryInstall("zhFontlibrary");
+        }
+
+        // ===============================
+        // y2026f9f02bodycamTestv08   06 汉化按钮
         // ===============================
         private void Addy2026f9f02bodycamTestv08xxx07ri_Click(object sender, RoutedEventArgs e)
         {

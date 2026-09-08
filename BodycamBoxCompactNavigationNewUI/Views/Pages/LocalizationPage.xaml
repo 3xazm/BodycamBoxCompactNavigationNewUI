@@ -13,13 +13,14 @@
 
             <!-- 标题 -->
             <TextBlock Text="                           汉化包添加✔️ 与 汉化包历史🕒"
-        FontSize="24"
-        Foreground="#8B0000"
-        FontWeight="SemiBold"
-        Margin="0,0,0,15" />
+                    FontSize="24"
+                    Foreground="#8B0000"
+                    FontWeight="SemiBold"
+                    Margin="0,0,0,15" 
+            />
 
 
-            <!-- ================= 2026/9/07================= -->
+            <!-- ================= 2026/9/08================= -->
             <Border CornerRadius="15"
          Padding="20"
          Margin="0,0,0,15"
@@ -32,9 +33,9 @@
                 <StackPanel>
 
                     <TextBlock FontSize="18" FontWeight="SemiBold">
-                     <Run Text="Bodycam 汉化补丁 8 " Foreground="#ED1C24" />
-                     <Run Text="(新版的v0.8.7)" Foreground="#00FF00" />
-                     <Run Text="(测试版汉化补丁)" Foreground="#EDFA00" />
+         <Run Text="Bodycam 汉化补丁 9 " Foreground="#ED1C24" />
+         <Run Text="(新版的v0.8.7)" Foreground="#00FF00" />
+         <Run Text="(测试版汉化补丁)" Foreground="#EDFA00" />
                     </TextBlock>
 
                     <TextBlock Text="                       -重磅更新！ 【Bodycam 深度汉化补丁发布！告别“致命角”，顺畅开黑！】-"
@@ -51,13 +52,13 @@
                      Margin="0,-12,0,15"/>
 
                     <TextBlock FontSize="15" FontWeight="SemiBold" Opacity="0.7" TextWrapping="Wrap" Margin="0,1,0,15">
-                <Run Text="1: 文本覆盖度大幅提升：" Foreground="#008b8b" FontWeight="Bold"  />
-                <Run Text="我们将原本官方不足 20% 的极低中文完成度，一口气提升到了 90% 以上！游戏内的核心菜单、界面提示、游戏模式及社交功能已全面汉化，大幅降低语言门槛。" Foreground="#3cb371" FontSize="14"/>
+                    <Run Text="1: 文本覆盖度大幅提升：" Foreground="#008b8b" FontWeight="Bold"  />
+                    <Run Text="我们将原本官方不足 20% 的极低中文完成度，一口气提升到了 90% 以上！游戏内的核心菜单、界面提示、游戏模式及社交功能已全面汉化，大幅降低语言门槛。" Foreground="#3cb371" FontSize="14"/>
                     </TextBlock>
 
                     <TextBlock FontSize="15" FontWeight="SemiBold" Opacity="0.7" TextWrapping="Wrap" Margin="0,1,0,15">
-                 <Run Text="2: 完美解决中文缺字/漏字问题：" Foreground="#008b8b" FontWeight="Bold"  />
-                 <Run Text="此前官方默认的 Noto Sans 字体字符不全，导致大量常用字无法显示——比如游戏名《致命视角》被缩减为《致命角》、《游戏设置》变成《游置》或者字体透明不显示，等严重影响阅读的情况。" Foreground="#3cb371" FontSize="14"/>
+                     <Run Text="2: 完美解决中文缺字/漏字问题：" Foreground="#008b8b" FontWeight="Bold"  />
+                     <Run Text="此前官方默认的 Noto Sans 字体字符不全，导致大量常用字无法显示——比如游戏名《致命视角》被缩减为《致命角》、《游戏设置》变成《游置》或者字体透明不显示，等严重影响阅读的情况。" Foreground="#3cb371" FontSize="14"/>
                     </TextBlock>
 
                     <TextBlock FontSize="15" FontWeight="SemiBold" Opacity="0.7" TextWrapping="Wrap" Margin="0,1,0,15">
@@ -72,11 +73,11 @@
                         <ui:Button Content="[ 添加 ] "
                      Width="150"
                      Margin="0,0,10,0"
-                     Click="Addy2026f9f02bodycamTestv08xxx07ri_Click"/>
+                     Click="Addy2026f9f02bodycamTestv08xxx08ri_Click"/>
 
                         <ui:Button Content="[ 移除 ] "
-                     Width="150"
-                     Click="RemoveLocalization_Click"/>
+                         Width="150"
+                         Click="RemoveLocalization_Click"/>
 
                     </StackPanel>
 
@@ -94,6 +95,97 @@
                     </TextBlock>
 
 
+                    <TextBlock Text="2026年9月08日"
+                 Opacity="10"
+                 Foreground="#4682b4"
+                 FontWeight="SemiBold"
+                 Margin="0,20,0,10"/>
+
+                    <TextBlock Text="作者：解决了“缺字漏字”问题 如“比赛结束” ---> “比束” 并汉化了一些内容" 
+                Opacity="0.7"
+                Margin="0,6,0,-13"/>
+
+                </StackPanel>
+            </Border>
+
+
+
+
+            <!-- ================= 2026/9/07================= -->
+            <Border CornerRadius="15"
+                     Padding="20"
+                     Margin="0,0,0,15"
+                     Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                     BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                     BorderThickness="2" 
+                     MinHeight="280"
+                     >
+
+                <StackPanel>
+
+                    <TextBlock FontSize="18" FontWeight="SemiBold">
+                     <Run Text="Bodycam 汉化补丁 8 " Foreground="#ED1C24" />
+                     <Run Text="(新版的v0.8.7)" Foreground="#00FF00" />
+                     <Run Text="(测试版汉化补丁)" Foreground="#EDFA00" />
+                    </TextBlock>
+
+                    <TextBlock Text="                       -重磅更新！ 【Bodycam 深度汉化补丁发布！告别“致命角”，顺畅开黑！】-"
+                                FontWeight="Bold"
+                                Opacity="0.7"
+                                Margin="0,6,0,-13"/>
+
+                    <TextBlock Text="                              各位们，大家期待已久的 Bodycam 汉化与体验优化正式上线啦！"
+                                 Opacity="0.7"
+                                 Margin="0,16,0,15"/>
+
+                    <TextBlock Text="                                    感谢大家对汉化项目的支持！本次更新带来了重大突破："
+                                 Opacity="0.7"
+                                 Margin="0,-12,0,15"/>
+
+                    <TextBlock FontSize="15" FontWeight="SemiBold" Opacity="0.7" TextWrapping="Wrap" Margin="0,1,0,15">
+                                <Run Text="1: 文本覆盖度大幅提升：" Foreground="#008b8b" FontWeight="Bold"  />
+                                <Run Text="我们将原本官方不足 20% 的极低中文完成度，一口气提升到了 90% 以上！游戏内的核心菜单、界面提示、游戏模式及社交功能已全面汉化，大幅降低语言门槛。" Foreground="#3cb371" FontSize="14"/>
+                    </TextBlock>
+
+                    <TextBlock FontSize="15" FontWeight="SemiBold" Opacity="0.7" TextWrapping="Wrap" Margin="0,1,0,15">
+                                 <Run Text="2: 完美解决中文缺字/漏字问题：" Foreground="#008b8b" FontWeight="Bold"  />
+                                 <Run Text="此前官方默认的 Noto Sans 字体字符不全，导致大量常用字无法显示——比如游戏名《致命视角》被缩减为《致命角》、《游戏设置》变成《游置》或者字体透明不显示，等严重影响阅读的情况。" Foreground="#3cb371" FontSize="14"/>
+                    </TextBlock>
+
+                    <TextBlock FontSize="15" FontWeight="SemiBold" Opacity="0.7" TextWrapping="Wrap" Margin="0,1,0,15">
+                            <Run Text="3: 集成全字形中文字库：" Foreground="#008b8b" FontWeight="Bold"  />
+                            <Run Text="我们在 Bodycam 工具箱 中特别集成了微软雅黑（Microsoft YaHei）全字符中文字库，补齐所有缺失字形，彻底告别“缺字漏字”和“豆腐块”，为你带来最完整、清晰的中文视觉体验！" Foreground="#3cb371" FontSize="14"/>
+                    </TextBlock>
+
+                    <TextBlock Text=" " Opacity="0.7" Margin="0,1,0,0"/>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <ui:Button Content="[ 添加 ] "
+                                 Width="150"
+                                 Margin="0,0,10,0"
+                                 Click="Addy2026f9f02bodycamTestv08xxx07ri_Click"/>
+
+                        <ui:Button Content="[ 移除 ] "
+                                     Width="150"
+                                     Click="RemoveLocalization_Click"/>
+
+                    </StackPanel>
+
+                    <TextBlock FontSize="15" FontWeight="SemiBold" Opacity="0.7" TextWrapping="Wrap" Margin="0,15,0,15">
+                                 <Run Text="1-"  FontWeight="Bold"  />
+                                 <Run Text="汉化补丁包" Foreground="#ff5151" FontWeight="Bold"  />
+                    </TextBlock>
+
+                    <TextBlock FontSize="15" FontWeight="SemiBold" Opacity="0.7" TextWrapping="Wrap" Margin="0,-10,0,15">
+                                 <Run Text="2-"  FontWeight="Bold"  />
+                                 <Run Text="微软雅黑" Foreground="#ED1C24" FontWeight="Bold"  />
+                                 <Run Text="（Microsoft YaHei）" Foreground="#00ff00" FontWeight="Bold"  />
+                                 <Run Text="全字符" Foreground="#4169e1" FontWeight="Bold"  />
+                                 <Run Text="中文字库补丁" Foreground="#ffff00" FontWeight="Bold"  />
+                    </TextBlock>
+
+
                     <TextBlock Text="2026年9月07日"
                              Opacity="10"
                              Foreground="#4682b4"
@@ -107,13 +199,6 @@
                 </StackPanel>
             </Border>
 
-
-            <!-- 标题 -->
-            <TextBlock Text="                           汉化包添加✔️ 与 汉化包历史🕒"
-                    FontSize="24"
-                    Foreground="#8B0000"
-                    FontWeight="SemiBold"
-                    Margin="0,0,0,15" />
 
 
             <!-- ================= 2026/9/05================= -->
@@ -209,12 +294,7 @@
             
             
 
-            <!-- 标题 -->
-            <TextBlock Text="                           汉化包添加✔️ 与 汉化包历史🕒"
-           FontSize="24"
-           Foreground="#8B0000"
-           FontWeight="SemiBold"
-           Margin="0,0,0,15" />
+
 
 
             <!-- ================= 2026/9/04================= -->
@@ -316,13 +396,6 @@
             </Border>
 
 
-
-            <!-- 标题 -->
-            <TextBlock Text="                           汉化包添加✔️ 与 汉化包历史🕒"
-                       FontSize="24"
-                       Foreground="#8B0000"
-                       FontWeight="SemiBold"
-                       Margin="0,0,0,15" />
 
 
             <!-- ================= 2026/9/02================= -->
